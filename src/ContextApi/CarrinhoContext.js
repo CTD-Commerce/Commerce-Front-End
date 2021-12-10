@@ -15,7 +15,6 @@ const CarrinhoContextProvider = ({children}) =>{
         },[cartItems])
       
         const addItem = (item)=> dispatch({type: "Adicionar Item",payload:item})
-        // const removeItem = (key)=> dispatch({type: 'REMOVE_ITEM',payload:key})
       
         return(
           <CarrinhoContext.Provider value={{cartItems,addItem}}>
