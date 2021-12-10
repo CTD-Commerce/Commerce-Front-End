@@ -1,5 +1,45 @@
 @import "~bootstrap/scss/bootstrap";
+.mainProdutoUnid{
+    background-color: #fff;
+    margin-top: 78px;
+    h2{
+        padding: 10px 55px;
+    }
+    .cardProdutos{
+        background-color: #fff !important;
+        border-radius: 5px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+    
+    .imgProduto{
+        width: 240px;
+        // margin-top: 40px;
+    }
+    
+    .cardProdutos{
+        width: auto;
+        min-height: 350px;
+        
+        .cardProdutosBody {
+            justify-content: space-around !important;
+            display: flex !important;
+            flex-direction: column !important;
+        }
+    }
+}
 
-h2{
-    padding: 10px 55px;
+@media (min-width: 1024px) {
+    .mainProdutoUnid {
+        height: 500px;
+        padding: 0.5rem 8rem;
+    .cardProdutos{
+        height: 400px;
+    }
+    .imgProduto{
+        width: 350px;
+        height: 350px;
+    }
+}
 }

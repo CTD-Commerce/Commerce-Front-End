@@ -1,6 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Image, Card, Button, Form} from 'react-bootstrap';
-// import Sugestoes from '../Sugestoes';
+import { Container, Row, Col, Image, Card, Button, Alert} from 'react-bootstrap';
 import './style.scss';
 import Header from '../../Header';
 import Footer from '../../Footer';
@@ -11,8 +10,9 @@ import { useParams } from 'react-router-dom';
 import { CarrinhoContext } from '../../../ContextApi/CarrinhoContext';
 
 
+
 const ProdutoUnid = () => {
-  
+  const [alerta, setAlerta] = useState(false);
   const [produto, setProd] = useState([]);
   const {id} = useParams ();
   const {addItem} = useContext(CarrinhoContext);
@@ -28,60 +28,66 @@ const ProdutoUnid = () => {
                   text: error
               });
           }
-      }
+      } 
       pegaProduto();
   }, [])
 
-
-    let containerProdutos = {
-        backgroundColor: '#fff',
-        padding: '20px',
-        borderRadius: '5px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between'
+  const alertaBotao = () =>{
+    addItem(produto)
+    setAlerta(true)
+    setTimeout(() => {
+      setAlerta(false)
+    }, 1800);
+  }
+  const conversorPreco = (value) => {
+    
+    if (value === Infinity) {
+        return 'R$ 0,00'   
     }
+    return value.toLocaleString("pt-br", {
+        style: "currency",
+        currency: "BRL"
+    });
+  
+  }
     return ( 
     <>
-    <Header />
-    <main>
-    <Container>
-        <Row style={containerProdutos}>
-        <Col xs={6} md={4}>
-            <Image src={produto&&produto.imagem} rounded />
-        </Col>
-        <Col>
-        <Card style={{ width: 'auto', height: '250px' }}>
-  <Card.Body>
-    <Card.Title>{produto&&produto.nome}</Card.Title>
-    <Card.Subtitle className="mb-2 text-muted">R&#36;{produto&&produto.preco}</Card.Subtitle>
-    <Card.Text>
-     {produto&&produto.descricao}
-    </Card.Text>
-    <Form>
-  <Form.Check 
-    type="switch"
-    id="custom-switch"
-    label="Colorida"
-  />
-   <Form.Check 
-    type="switch"
-    id="custom-switch"
-    label="Preto e Branco"
-  />
-  </Form>
-        <Button variant="secondary" style={{padding:'10px'}} onClick={() => addItem(produto)}>Adicionar ao carrinho</Button>
-  </Card.Body>
-</Card>
-        </Col>
-        </Row>
-    </Container>
-    <h2>Você também pode gostar</h2>
-    </main>
-      {/* <Sugestoes /> */}
+      <Header />
+      <main className='mainProdutoUnid'>
+      
+      <Container expand ="lg">
+          <Row className= 'containerProdutos'>
+            
+            <Col xs={12} md={4} p={0} style={{textAlign:'center'}}>
+              <Image className='imgProduto' src={produto&&produto.imagem} rounded />
+            </Col>
+
+            <Col style={{margin: '10px'}}>
+              <Card className='cardProdutos'>
+                <Card.Body className='cardProdutosBody'>
+                  <Card.Title>{produto&&produto.nome}</Card.Title>
+
+                  <Card.Text> {produto&&produto.descricao} </Card.Text>
+                  
+                  <Card.Subtitle className="mb-2 text-muted" style={{fontSize: '45px'}}>{produto&&conversorPreco(Number(produto.preco))} </Card.Subtitle>
+
+                    <Button variant="secondary" style={{padding:'10px', maxWidth: '300px'}} onClick={() => alertaBotao()}>Adicionar ao carrinho</Button>
+                
+                </Card.Body>
+              </Card>
+            </Col>
+
+          </Row>
+      </Container>
+      {alerta&&<Alert variant="dark">
+        Produto adicionado ao carrinho!
+      </Alert>}
+      </main>
+     
       <Footer />
     </>
     )
 }
 
 export default ProdutoUnid;
+
