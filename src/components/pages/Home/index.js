@@ -7,6 +7,7 @@ import Header from "../../Header"
 import Footer from "../../Footer"
 import api from "../../../services/api"
 import './style.scss'
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
 
@@ -30,6 +31,10 @@ const Home = () => {
 
     return (
         <>
+        <Helmet>
+        <title> UaiTatu | Home</title>
+      </Helmet>
+        
             <Header />
             <Banner />
             <main>

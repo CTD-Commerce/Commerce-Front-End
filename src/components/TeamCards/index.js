@@ -1,5 +1,6 @@
 import { Card, Container } from "react-bootstrap"
 import "./styles.scss";
+import { Helmet } from 'react-helmet-async';
 
 const team = [
   {
@@ -38,27 +39,30 @@ const team = [
 const TeamCards = () => {
   return (
     <>
+      <Helmet>
+        <title>UaiTatu | Sobre Nós</title>
+      </Helmet>
       <h1>Team Tatu</h1>
       <Container fluid style={{ width: '90%', gap: '1.2rem', marginTop: '3rem' }} className="d-flex flex-wrap justify-content-center">
         {team.map(user =>
 
-          <Card style={{ width: '20rem'}} id="userCard">
-          <Card.Img variant="top" src={user.img} />
-          <Card.Body>
-            <Card.Title>{user.name}</Card.Title>
-            <Card.Text>
-              Web Developer
-            </Card.Text>
-          </Card.Body>
-        
-          <Card.Body id="iconSocial">
-            <Card.Link target="_blank" href={user.linkedin}><img className="iconLinkedIn" src="https://www.freeiconspng.com/uploads/linkedin-logo-3.png" alt="linkedIn"/></Card.Link>
-            <Card.Link target="_blank" href={user.github}><img className="iconGitHub"src="https://www.freeiconspng.com/uploads/github-logo-icon-20.png" alt="github"/></Card.Link>
-          </Card.Body>
-        </Card>       
-         )}
-         </Container>
-</>
-    )
+          <Card style={{ width: '20rem' }} id="userCard">
+            <Card.Img variant="top" src={user.img} />
+            <Card.Body>
+              <Card.Title>{user.name}</Card.Title>
+              <Card.Text>
+                Web Developer
+              </Card.Text>
+            </Card.Body>
+
+            <Card.Body id="iconSocial">
+              <Card.Link target="_blank" href={user.linkedin}><img className="iconLinkedIn" src="https://www.freeiconspng.com/uploads/linkedin-logo-3.png" alt="linkedIn" /></Card.Link>
+              <Card.Link target="_blank" href={user.github}><img className="iconGitHub" src="https://www.freeiconspng.com/uploads/github-logo-icon-20.png" alt="github" /></Card.Link>
+            </Card.Body>
+          </Card>
+        )}
+      </Container>
+    </>
+  )
 }
 export default TeamCards
