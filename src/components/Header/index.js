@@ -18,7 +18,7 @@ const Header = () => {
         navbarScroll
       >
       </Nav>
-         <NavDropdown menuVariant="dark" title="Categorias" id="nav-dropdown-dark-example" >
+         <NavDropdown menuVariant="dark" text="light" title="Categorias" id="nav-dropdown-dark-example" >
           <NavDropdown.Item><Link className="text-link"to="/produtos">Produtos</Link></NavDropdown.Item>
           <NavDropdown.Item><Link className="text-link"to="/produtos/categorias/1">Agulhas</Link></NavDropdown.Item>
           <NavDropdown.Item><Link className="text-link"to="/produtos/categorias/4">Batoques</Link></NavDropdown.Item>

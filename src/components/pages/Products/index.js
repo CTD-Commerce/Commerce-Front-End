@@ -43,7 +43,7 @@ const Products = ({escolha}) => {
                     <Card.Title>{nome}</Card.Title>
                     <Card.Body className="d-flex flex-column align-items-center">
                       <Card.Text> R&#36;{preco}</Card.Text>
-                      <Button variant="light">Ver Mais</Button>
+                      <Button variant="light" >Ver Mais</Button>
                     </Card.Body>
                   </Card.Body>
                 </Card>
