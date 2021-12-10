@@ -8,14 +8,14 @@
     max-height: 90vh;
     display: flex;
     text-shadow: 2px 2px 6.5px rgb(0, 0, 0);
-    background: url(https://images.unsplash.com/photo-1499440009201-89446e0bd9d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80);
+    background: url(https://images.pexels.com/photos/4125589/pexels-photo-4125589.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
         height: 100%;
         width: 100%;
         max-height: 90vh;
         background-attachment: fixed;
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: bottom 50px center;
+        background-position: top -20px center;
         padding: 120px 0 200px;
         margin-top: 2em;
 
@@ -24,9 +24,8 @@
         padding: 0;
         font-size: 2.8em;
         color: white;
-        
-
     }
+    
     p{
         margin: 1em 5.85em 0;
         padding: 0;

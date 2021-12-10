@@ -1,9 +1,37 @@
 import React from 'react';
 import { Container, Row, Col, Image, Card, Button, Form} from 'react-bootstrap';
-import Sugestoes from '../Sugestoes';
+// import Sugestoes from '../Sugestoes';
 import './style.scss';
+import Header from '../../Header';
+import Footer from '../../Footer';
+import api from '../../../services/api';
+import { useState, useEffect, useContext} from 'react';
+import Swal from 'sweetalert2';
+import { useParams } from 'react-router-dom';
+import { CarrinhoContext } from '../../../ContextApi/CarrinhoContext';
+
 
 const ProdutoUnid = () => {
+  
+  const [produto, setProd] = useState([]);
+  const {id} = useParams ();
+  const {addItem} = useContext(CarrinhoContext);
+  useEffect(() => {
+      async function pegaProduto() {
+          try {
+              const response = await api.get(`/produtos/${id}`);
+              setProd(response.data);
+          } catch (error) {
+              Swal.fire({
+                  title: error,
+                  icon: 'error',
+                  text: error
+              });
+          }
+      }
+      pegaProduto();
+  }, [])
+
 
     let containerProdutos = {
         backgroundColor: '#fff',
@@ -15,19 +43,20 @@ const ProdutoUnid = () => {
     }
     return ( 
     <>
+    <Header />
+    <main>
     <Container>
         <Row style={containerProdutos}>
         <Col xs={6} md={4}>
-            <Image src="https://i.pinimg.com/474x/cd/da/36/cdda36fbac09ad901ce01f3989c60aa6.jpg" rounded />
+            <Image src={produto&&produto.imagem} rounded />
         </Col>
         <Col>
         <Card style={{ width: 'auto', height: '250px' }}>
   <Card.Body>
-    <Card.Title>Tattoo</Card.Title>
-    <Card.Subtitle className="mb-2 text-muted">tatuagem</Card.Subtitle>
+    <Card.Title>{produto&&produto.nome}</Card.Title>
+    <Card.Subtitle className="mb-2 text-muted">R&#36;{produto&&produto.preco}</Card.Subtitle>
     <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
+     {produto&&produto.descricao}
     </Card.Text>
     <Form>
   <Form.Check 
@@ -41,15 +70,16 @@ const ProdutoUnid = () => {
     label="Preto e Branco"
   />
   </Form>
-        <Button variant="secondary" style={{padding:'10px'}}>Adicionar ao carrinho</Button>
+        <Button variant="secondary" style={{padding:'10px'}} onClick={() => addItem(produto)}>Adicionar ao carrinho</Button>
   </Card.Body>
 </Card>
         </Col>
         </Row>
     </Container>
     <h2>Você também pode gostar</h2>
-
-      <Sugestoes />
+    </main>
+      {/* <Sugestoes /> */}
+      <Footer />
     </>
     )
 }
