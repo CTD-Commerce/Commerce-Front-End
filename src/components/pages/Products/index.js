@@ -6,6 +6,7 @@ import './style.scss';
 import Header from '../../../components/Header'
 import Footer from '../../../components/Footer'
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 
 const Products = ({escolha}) => {
@@ -29,6 +30,9 @@ const Products = ({escolha}) => {
 
     return (
       <>
+      <Helmet>  
+        <title>UaiTatu | Produtos</title>
+      </Helmet>
         <Header />
         <h1>Produtos</h1>
         {produtos.length !==0 && (

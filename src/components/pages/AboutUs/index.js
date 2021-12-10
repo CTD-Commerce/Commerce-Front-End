@@ -3,7 +3,7 @@ import "./style.scss";
 import Header from "../../Header"
 import TeamCards from "../../TeamCards"
 import Footer from "../../Footer"
-
+import { Helmet } from 'react-helmet-async';
 
 const AboutUs= () => {
     return (

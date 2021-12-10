@@ -4,10 +4,11 @@ import AboutUs from '../components/pages/AboutUs'
 import Products from '../components/pages/Products'
 import ProdutoUnid from '../components/pages/ProdutoUnid';
 import Carrinho from '../components/pages/Carrinho';
-
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const RouteList = () => (
     <BrowserRouter>
+    <HelmetProvider>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="sobrenos" element={<AboutUs />} />
@@ -21,6 +22,7 @@ const RouteList = () => (
         <Route path="carrinho" element={<Carrinho
         />} />
       </Routes>
+      </HelmetProvider>
     </BrowserRouter>
   );
   
