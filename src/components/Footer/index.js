@@ -9,7 +9,8 @@ const Footer = () => {
                             <svg className="bi" width="30" height="24"><use href="#bootstrap"></use></svg>
                         </a>
                         <span className="text-muted">© 2021 UaiTatu</span>
-                    </div><ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
+                    </div>
+                    <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
                         <li className="ms-3"><a className="text-muted" href="#"><svg className="bi" width="24" height="24"><use href="#twitter"></use></svg></a></li>
                         <li className="ms-3"><a className="text-muted" href="#"><svg className="bi" width="24" height="24"><use href="#instagram"></use></svg></a></li>
                         <li className="ms-3"><a className="text-muted" href="#"><svg className="bi" width="24" height="24"><use href="#facebook"></use></svg></a></li>
