@@ -11,15 +11,15 @@ const Carrinho = () => {
         <>
             < Header />
                 <h1>Carrinho</h1>
-            <Container className=" card-container d-flex flex-wrap justify-content-center">
+            <Container className=" card-container d-flex flex-wrap justify-content-center" style={{marginTop: '3rem'}}>
                     
                 {cartItems.length > 0 && cartItems.map(item => {
                     return (
                         <>
-                            <Card id="card-horizontal" className="d-flex flex-row" bg="warning">
-                                    <div><Card.Img className="d-flex flex-row" style={{ width: '5rem', height: '5rem' }} variant="left" src={item.imagem} /></div>
-                                    <div><Card.Title className="d-flex flex-column">{item.nome}</Card.Title></div>
-                                    <div><Card.Text className="d-flex flex-row"> R&#36;{item.preco}</Card.Text></div>
+                            <Card id="card-horizontal" className="d-flex flex-row" bg="dark" text="light ">
+                                    <div><Card.Img  style={{ width: '5rem', height: '5rem', margin: '1rem' }} variant="left" src={item.imagem} /></div>
+                                    <div><Card.Title className="cart-descricao">{item.nome}</Card.Title></div>
+                                    <div><Card.Text> R&#36;{item.preco}</Card.Text></div>
                             </Card>
                         </>
                     )

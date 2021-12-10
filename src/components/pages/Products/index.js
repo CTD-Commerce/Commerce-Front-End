@@ -41,9 +41,9 @@ const Products = ({escolha}) => {
                     <Card.Img variant="top" src={imagem}/>
                   </div>
                   <Card.Body>
-                    <Card.Title>{nome}</Card.Title>
-                    <Card.Body className="d-flex flex-column align-items-center">
-                      <Card.Text> R&#36;{preco}</Card.Text>
+                    <Card.Title id="prod-titulo">{nome}</Card.Title>
+                    <Card.Body className="d-flex flex-wrap flex-column align-items-bottom card-botao">
+                      <Card.Text style={{textAlign: 'center'}}> R&#36;{preco}</Card.Text>
                       <Button variant="light" onClick={() => navigate(`/produtos/${id}/`)}>Ver Mais</Button>
                     </Card.Body>
                   </Card.Body>
