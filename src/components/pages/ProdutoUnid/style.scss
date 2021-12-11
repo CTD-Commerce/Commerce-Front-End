@@ -15,7 +15,6 @@
     
     .imgProduto{
         width: 240px;
-        // margin-top: 40px;
     }
     
     .cardProdutos{
@@ -30,7 +29,7 @@
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
     .mainProdutoUnid {
         height: 500px;
         padding: 0.5rem 8rem;
