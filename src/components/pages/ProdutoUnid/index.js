@@ -8,6 +8,7 @@ import { useState, useEffect, useContext} from 'react';
 import Swal from 'sweetalert2';
 import { useParams } from 'react-router-dom';
 import { CarrinhoContext } from '../../../ContextApi/CarrinhoContext';
+import { Helmet } from 'react-helmet-async';
 
 
 
@@ -52,6 +53,10 @@ const ProdutoUnid = () => {
   }
     return ( 
     <>
+    <Helmet>  
+        <title>UaiTatu | {produto.id ? produto.nome : 'Produto' }</title>
+      </Helmet>
+    
       <Header />
       <main className='mainProdutoUnid'>
       

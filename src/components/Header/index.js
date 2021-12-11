@@ -18,8 +18,8 @@ const Header = () => {
         navbarScroll
       >
       </Nav>
-         <NavDropdown menuVariant="dark" title="Categorias" id="nav-dropdown-dark-example" >
-          <NavDropdown.Item><Link className="text-link"to="/produtos">Produtos</Link></NavDropdown.Item>
+         <NavDropdown text="light" menuVariant="dark" title="Categorias" id="nav-dropdown-dark-example">
+          <NavDropdown.Item><Link style={{marginTop: '8.3rem'}} className="text-link"to="/produtos">Produtos</Link></NavDropdown.Item>
           <NavDropdown.Item><Link className="text-link"to="/produtos/categorias/1">Agulhas</Link></NavDropdown.Item>
           <NavDropdown.Item><Link className="text-link"to="/produtos/categorias/4">Batoques</Link></NavDropdown.Item>
           <NavDropdown.Item><Link className="text-link"to="/produtos/categorias/3">Máquinas</Link></NavDropdown.Item>

@@ -13,6 +13,11 @@
     }
 
 }
+#prod-titulo {
+    height: 5rem;
+ }
+
+
 
 #box-prod {
     gap: 1.3rem;
@@ -22,6 +27,13 @@
 }
 
 #cardImg {
-
     background-color: white;
+}
+
+@media(max-width: 720px) {
+
+    #prod-titulo {
+        font-size: .8rem;
+     }
+
 }
