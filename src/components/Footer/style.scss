@@ -1,0 +1,15 @@
+.footer {
+    background: #0D0C0C;
+    font-size: 0.9rem;
+    align-items: center;
+    padding: 1rem;
+    h1{
+        font-size: 1rem;
+    }
+}
+@media (min-width: 760px) {
+    .footer{
+        height: 6rem;
+    }
+}
+

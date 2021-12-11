@@ -1,26 +1,14 @@
 import "./style.scss"
+
 const Footer = () => {
 
     return (
         <>
-            <div className="container-fluid">
-                <footer style={{backgroundColor: "black"}} className="d-flex flex-wrap my-0">
-                    <div className="col-md-4 d-flex align-items-center">
-                        <a href="/" className="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-                            <svg className="bi" width="30" height="24"><use href="#bootstrap"></use></svg>
-                        </a>
-                        <span className="text-muted">© 2021 UaiTatu</span>
-                    </div>
-                    <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
-                        <li className="ms-3"><a className="text-muted" href="#"><svg className="bi" width="24" height="24"><use href="#twitter"></use></svg></a></li>
-                        <li className="ms-3"><a className="text-muted" href="#"><svg className="bi" width="24" height="24"><use href="#instagram"></use></svg></a></li>
-                        <li className="ms-3"><a className="text-muted" href="#"><svg className="bi" width="24" height="24"><use href="#facebook"></use></svg></a></li>
-                    </ul>
-                </footer>
+            <div className="footer">
+                   <h1>© Copyright 2021</h1> 
             </div>
         </>
     )
-
 }
 
 export default Footer;
